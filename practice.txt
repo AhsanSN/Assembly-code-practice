@@ -1,0 +1,10 @@
+# if(a=b){x = 3}else{x=4}
+
+addi x1, x0, 3
+addi x2, x0, 4
+
+bne x1, x2, else
+addi x3, x0, 3
+
+else:
+addi x3, x0, 4
