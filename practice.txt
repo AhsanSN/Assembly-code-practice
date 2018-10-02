@@ -8,3 +8,25 @@ addi x3, x0, 3
 
 else:
 addi x3, x0, 4
+
+#for (i=0; i<5; i++){arr[i] = i}
+
+addi x1, x0, 0 #i=0
+addi x2, x0, 5 #  4
+addi x3, x0, 0 #  x3 = base address = 0
+
+Loop:
+beq x1, x2, Exit
+add x3, x3 , x1 # x3 = base address 
+sb x1, 0(x3)
+addi x1, x1, 1 #i=i+1
+beq x0, x0, Loop
+
+Exit:
+addi x3, x0, 0 #  x3 = base address = 0
+
+lb x1, 0(x3)
+lb x2, 1(x3)
+lb x3, 2(x3)
+lb x4, 3(x3)
+lb x5, 4(x3)
